@@ -12,10 +12,13 @@ app.get('/', (req ,res)=> {
 app.get("/anime", (req ,res)=> {
     res.sendFile(path.join(__dirname , 'public','anime.html'))
 })
-
+app.get("/anime/jjk", (req ,res) => {
+    res.sendFile(path.join(__dirname , 'public' ,'jjk.html'))
+});
 app.get("/api", (req ,res)=> {
     res.sendFile(path.join(__dirname , 'data.json'))
 })
+
 app.use((req, res) => {
     res.status(404).sendFile(path.join(__dirname, '404.html'));
 });
